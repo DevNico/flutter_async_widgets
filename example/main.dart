@@ -24,7 +24,8 @@ class ExampleWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AsyncBuilder.single<String>(
-      Future.delayed(const Duration(seconds: 5), () => 'String from the future'),
+      Future.delayed(
+          const Duration(seconds: 5), () => 'String from the future'),
       builder: (context, child, data) => Scaffold(
         appBar: AppBar(
           title: const Text('AsyncBuilder'),
@@ -35,7 +36,10 @@ class ExampleWidget extends StatelessWidget {
                 padding: const EdgeInsets.all(16),
                 child: AspectRatio(
                   aspectRatio: 1,
-                  child: Theme(data: ThemeData(accentColor: Colors.white), child: const CircularProgressIndicator()),
+                  child: Theme(
+                    data: ThemeData(accentColor: Colors.white),
+                    child: const CircularProgressIndicator(),
+                  ),
                 ),
               ),
           ],
@@ -46,7 +50,8 @@ class ExampleWidget extends StatelessWidget {
           child: child,
         ),
       ),
-      onData: (context, data) => Center(child: Text(data, textAlign: TextAlign.center)),
+      onData: (context, data) =>
+          Center(child: Text(data, textAlign: TextAlign.center)),
     );
   }
 }

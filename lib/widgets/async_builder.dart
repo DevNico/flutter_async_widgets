@@ -24,7 +24,8 @@ class AsyncBuilder extends StatelessWidget {
   final int dataLength;
 
   /// Used to wrap the [onData], [onError] on [onLoading] result with another [Widget] such as a [Scaffold].
-  final Widget Function(BuildContext context, Widget child, List<dynamic> data) builder;
+  final Widget Function(BuildContext context, Widget child, List<dynamic> data)
+      builder;
 
   /// Display a widget when the data is loaded
   final Widget Function(BuildContext context, List<dynamic> data) onData;
@@ -52,7 +53,9 @@ class AsyncBuilder extends StatelessWidget {
     required this.onError,
     required this.onLoading,
     required this.orElse,
-  })   : assert((orElse != null && onError == null && onLoading == null) || orElse == null,
+  })   : assert(
+            (orElse != null && onError == null && onLoading == null) ||
+                orElse == null,
             'orElse is only allowed if onError and onLoading are null'),
         snapshots = Future.wait(snapshots),
         dataLength = snapshots.length,
@@ -71,7 +74,9 @@ class AsyncBuilder extends StatelessWidget {
         key: key,
         snapshots: [snapshot],
         onData: (context, data) => onData(context, data[0] as A),
-        builder: (context, child, data) => builder != null ? builder.call(context, child, data[0] as A?) : child,
+        builder: (context, child, data) => builder != null
+            ? builder.call(context, child, data[0] as A?)
+            : child,
         onError: onError,
         onLoading: onLoading,
         orElse: orElse,
@@ -81,7 +86,8 @@ class AsyncBuilder extends StatelessWidget {
     Future<A> snapshot1,
     Future<B> snapshot2, {
     required Widget Function(BuildContext context, A data1, B data2) onData,
-    Widget Function(BuildContext context, Widget child, A? data1, B? data2)? builder,
+    Widget Function(BuildContext context, Widget child, A? data1, B? data2)?
+        builder,
     ErrorBuilder? onError,
     WidgetBuilder? onLoading,
     WidgetBuilder? orElse,
@@ -89,7 +95,9 @@ class AsyncBuilder extends StatelessWidget {
       AsyncBuilder._(
         snapshots: [snapshot1, snapshot2],
         onData: (context, data) => onData(context, data[0] as A, data[1] as B),
-        builder: (context, child, data) => builder != null ? builder.call(context, child, data[0] as A?, data[1] as B?) : child,
+        builder: (context, child, data) => builder != null
+            ? builder.call(context, child, data[0] as A?, data[1] as B?)
+            : child,
         onError: onError,
         onLoading: onLoading,
         orElse: orElse,
@@ -99,17 +107,23 @@ class AsyncBuilder extends StatelessWidget {
     Future<A> snapshot1,
     Future<B> snapshot2,
     Future<C> snapshot3, {
-    required Widget Function(BuildContext context, A data1, B data2, C data3) onData,
-    Widget Function(BuildContext context, Widget child, A? data1, B? data2, C? data3)? builder,
+    required Widget Function(BuildContext context, A data1, B data2, C data3)
+        onData,
+    Widget Function(
+            BuildContext context, Widget child, A? data1, B? data2, C? data3)?
+        builder,
     ErrorBuilder? onError,
     WidgetBuilder? onLoading,
     WidgetBuilder? orElse,
   }) =>
       AsyncBuilder._(
         snapshots: [snapshot1, snapshot2, snapshot3],
-        onData: (context, data) => onData(context, data[0] as A, data[1] as B, data[2] as C),
-        builder: (context, child, data) =>
-            builder != null ? builder.call(context, child, data[0] as A?, data[1] as B?, data[2] as C?) : child,
+        onData: (context, data) =>
+            onData(context, data[0] as A, data[1] as B, data[2] as C),
+        builder: (context, child, data) => builder != null
+            ? builder.call(
+                context, child, data[0] as A?, data[1] as B?, data[2] as C?)
+            : child,
         onError: onError,
         onLoading: onLoading,
         orElse: orElse,
@@ -120,17 +134,24 @@ class AsyncBuilder extends StatelessWidget {
     Future<B> snapshot2,
     Future<C> snapshot3,
     Future<D> snapshot4, {
-    required Widget Function(BuildContext context, A data1, B data2, C data3, D data4) onData,
-    Widget Function(BuildContext context, Widget child, A? data1, B? data2, C? data3, D? data4)? builder,
+    required Widget Function(
+            BuildContext context, A data1, B data2, C data3, D data4)
+        onData,
+    Widget Function(BuildContext context, Widget child, A? data1, B? data2,
+            C? data3, D? data4)?
+        builder,
     ErrorBuilder? onError,
     WidgetBuilder? onLoading,
     WidgetBuilder? orElse,
   }) =>
       AsyncBuilder._(
         snapshots: [snapshot1, snapshot2, snapshot3, snapshot4],
-        onData: (context, data) => onData(context, data[0] as A, data[1] as B, data[2] as C, data[3] as D),
-        builder: (context, child, data) =>
-            builder != null ? builder.call(context, child, data[0] as A?, data[1] as B?, data[2] as C?, data[3] as D?) : child,
+        onData: (context, data) => onData(
+            context, data[0] as A, data[1] as B, data[2] as C, data[3] as D),
+        builder: (context, child, data) => builder != null
+            ? builder.call(context, child, data[0] as A?, data[1] as B?,
+                data[2] as C?, data[3] as D?)
+            : child,
         onError: onError,
         onLoading: onLoading,
         orElse: orElse,
@@ -142,17 +163,23 @@ class AsyncBuilder extends StatelessWidget {
     Future<C> snapshot3,
     Future<D> snapshot4,
     Future<E> snapshot5, {
-    required Widget Function(BuildContext context, A data1, B data2, C data3, D data4, E data5) onData,
-    Widget Function(BuildContext context, Widget child, A? data1, B? data2, C? data3, D? data4, E? data5)? builder,
+    required Widget Function(
+            BuildContext context, A data1, B data2, C data3, D data4, E data5)
+        onData,
+    Widget Function(BuildContext context, Widget child, A? data1, B? data2,
+            C? data3, D? data4, E? data5)?
+        builder,
     ErrorBuilder? onError,
     WidgetBuilder? onLoading,
     WidgetBuilder? orElse,
   }) =>
       AsyncBuilder._(
         snapshots: [snapshot1, snapshot2, snapshot3, snapshot4, snapshot5],
-        onData: (context, data) => onData(context, data[0] as A, data[1] as B, data[2] as C, data[3] as D, data[4] as E),
+        onData: (context, data) => onData(context, data[0] as A, data[1] as B,
+            data[2] as C, data[3] as D, data[4] as E),
         builder: (context, child, data) => builder != null
-            ? builder.call(context, child, data[0] as A?, data[1] as B?, data[2] as C?, data[3] as D?, data[4] as E?)
+            ? builder.call(context, child, data[0] as A?, data[1] as B?,
+                data[2] as C?, data[3] as D?, data[4] as E?)
             : child,
         onError: onError,
         onLoading: onLoading,
@@ -166,17 +193,30 @@ class AsyncBuilder extends StatelessWidget {
     Future<D> snapshot4,
     Future<E> snapshot5,
     Future<F> snapshot6, {
-    required Widget Function(BuildContext context, A data1, B data2, C data3, D data4, E data5, F data6) onData,
-    Widget Function(BuildContext context, Widget child, A? data1, B? data2, C? data3, D? data4, E? data5, F? data6)? builder,
+    required Widget Function(BuildContext context, A data1, B data2, C data3,
+            D data4, E data5, F data6)
+        onData,
+    Widget Function(BuildContext context, Widget child, A? data1, B? data2,
+            C? data3, D? data4, E? data5, F? data6)?
+        builder,
     ErrorBuilder? onError,
     WidgetBuilder? onLoading,
     WidgetBuilder? orElse,
   }) =>
       AsyncBuilder._(
-        snapshots: [snapshot1, snapshot2, snapshot3, snapshot4, snapshot5, snapshot6],
-        onData: (context, data) => onData(context, data[0] as A, data[1] as B, data[2] as C, data[3] as D, data[4] as E, data[5] as F),
+        snapshots: [
+          snapshot1,
+          snapshot2,
+          snapshot3,
+          snapshot4,
+          snapshot5,
+          snapshot6
+        ],
+        onData: (context, data) => onData(context, data[0] as A, data[1] as B,
+            data[2] as C, data[3] as D, data[4] as E, data[5] as F),
         builder: (context, child, data) => builder != null
-            ? builder.call(context, child, data[0] as A?, data[1] as B?, data[2] as C?, data[3] as D?, data[4] as E?, data[5] as F?)
+            ? builder.call(context, child, data[0] as A?, data[1] as B?,
+                data[2] as C?, data[3] as D?, data[4] as E?, data[5] as F?)
             : child,
         onError: onError,
         onLoading: onLoading,
@@ -191,14 +231,26 @@ class AsyncBuilder extends StatelessWidget {
     Future<E> snapshot5,
     Future<F> snapshot6,
     Future<G> snapshot7, {
-    required Widget Function(BuildContext context, A data1, B data2, C data3, D data4, E data5, F data6, G data7) onData,
-    Widget Function(BuildContext context, Widget child, A? data1, B? data2, C? data3, D? data4, E? data5, F? data6, G? data7)? builder,
+    required Widget Function(BuildContext context, A data1, B data2, C data3,
+            D data4, E data5, F data6, G data7)
+        onData,
+    Widget Function(BuildContext context, Widget child, A? data1, B? data2,
+            C? data3, D? data4, E? data5, F? data6, G? data7)?
+        builder,
     ErrorBuilder? onError,
     WidgetBuilder? onLoading,
     WidgetBuilder? orElse,
   }) =>
       AsyncBuilder._(
-        snapshots: [snapshot1, snapshot2, snapshot3, snapshot4, snapshot5, snapshot6, snapshot7],
+        snapshots: [
+          snapshot1,
+          snapshot2,
+          snapshot3,
+          snapshot4,
+          snapshot5,
+          snapshot6,
+          snapshot7
+        ],
         onData: (context, data) => onData(
           context,
           data[0] as A,
@@ -236,15 +288,27 @@ class AsyncBuilder extends StatelessWidget {
     Future<F> snapshot6,
     Future<G> snapshot7,
     Future<H> snapshot8, {
-    required Widget Function(BuildContext context, A data1, B data2, C data3, D data4, E data5, F data6, G data7, H data8) onData,
-    Widget Function(BuildContext context, Widget child, A? data1, B? data2, C? data3, D? data4, E? data5, F? data6, G? data7, H? data8)?
+    required Widget Function(BuildContext context, A data1, B data2, C data3,
+            D data4, E data5, F data6, G data7, H data8)
+        onData,
+    Widget Function(BuildContext context, Widget child, A? data1, B? data2,
+            C? data3, D? data4, E? data5, F? data6, G? data7, H? data8)?
         builder,
     ErrorBuilder? onError,
     WidgetBuilder? onLoading,
     WidgetBuilder? orElse,
   }) =>
       AsyncBuilder._(
-        snapshots: [snapshot1, snapshot2, snapshot3, snapshot4, snapshot5, snapshot6, snapshot7, snapshot8],
+        snapshots: [
+          snapshot1,
+          snapshot2,
+          snapshot3,
+          snapshot4,
+          snapshot5,
+          snapshot6,
+          snapshot7,
+          snapshot8
+        ],
         onData: (context, data) => onData(
           context,
           data[0] as A,
@@ -285,7 +349,9 @@ class AsyncBuilder extends StatelessWidget {
     Future<G> snapshot7,
     Future<H> snapshot8,
     Future<I> snapshot9, {
-    required Widget Function(BuildContext context, A data1, B data2, C data3, D data4, E data5, F data6, G data7, H data8, I data9) onData,
+    required Widget Function(BuildContext context, A data1, B data2, C data3,
+            D data4, E data5, F data6, G data7, H data8, I data9)
+        onData,
     Widget Function(
       BuildContext context,
       Widget child,
@@ -305,7 +371,17 @@ class AsyncBuilder extends StatelessWidget {
     WidgetBuilder? orElse,
   }) =>
       AsyncBuilder._(
-        snapshots: [snapshot1, snapshot2, snapshot3, snapshot4, snapshot5, snapshot6, snapshot7, snapshot8, snapshot9],
+        snapshots: [
+          snapshot1,
+          snapshot2,
+          snapshot3,
+          snapshot4,
+          snapshot5,
+          snapshot6,
+          snapshot7,
+          snapshot8,
+          snapshot9
+        ],
         onData: (context, data) => onData(
           context,
           data[0] as A,
