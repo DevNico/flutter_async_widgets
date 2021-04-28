@@ -1,8 +1,9 @@
 name: flutter_async_widgets
 description: Flutter async convenience widgets
 version: 0.0.1
-author: Nicolas Schlecker
 homepage: https://github.com/DevNico/flutter_async_widgets
+repository: https://github.com/DevNico/flutter_async_widgets
+issue_tracker: https://github.com/DevNico/flutter_async_widgets/issues
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
