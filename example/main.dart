@@ -32,14 +32,11 @@ class ExampleWidget extends StatelessWidget {
           actions: [
             // If data is null the future is still loading
             if (data == null)
-              Padding(
-                padding: const EdgeInsets.all(16),
+              const Padding(
+                padding: EdgeInsets.all(16),
                 child: AspectRatio(
                   aspectRatio: 1,
-                  child: Theme(
-                    data: ThemeData(accentColor: Colors.white),
-                    child: const CircularProgressIndicator(),
-                  ),
+                  child: CircularProgressIndicator(),
                 ),
               ),
           ],
