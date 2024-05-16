@@ -53,7 +53,7 @@ class AsyncBuilder extends StatelessWidget {
     required this.onError,
     required this.onLoading,
     required this.orElse,
-  })   : assert(
+  })  : assert(
             (orElse != null && onError == null && onLoading == null) ||
                 orElse == null,
             'orElse is only allowed if onError and onLoading are null'),
@@ -364,8 +364,7 @@ class AsyncBuilder extends StatelessWidget {
       G? data7,
       H? data8,
       I? data9,
-    )?
-        builder,
+    )? builder,
     ErrorBuilder? onError,
     WidgetBuilder? onLoading,
     WidgetBuilder? orElse,
@@ -434,7 +433,7 @@ class AsyncBuilder extends StatelessWidget {
             child = Center(
               child: Text(
                 error.toString(),
-                style: theme.textTheme.bodyText1,
+                style: theme.textTheme.bodyLarge,
                 textAlign: TextAlign.center,
               ),
             );

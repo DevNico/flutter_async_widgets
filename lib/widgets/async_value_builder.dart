@@ -112,8 +112,7 @@ class AsyncValueBuilder extends StatelessWidget {
       A? data1,
       B? data2,
       C? data3,
-    )?
-        builder,
+    )? builder,
     ErrorBuilder? onError,
     WidgetBuilder? onLoading,
     WidgetBuilder? orElse,
@@ -147,8 +146,7 @@ class AsyncValueBuilder extends StatelessWidget {
       B data2,
       C data3,
       D data4,
-    )
-        onData,
+    ) onData,
     Widget Function(
       BuildContext context,
       Widget child,
@@ -156,8 +154,7 @@ class AsyncValueBuilder extends StatelessWidget {
       B? data2,
       C? data3,
       D? data4,
-    )?
-        builder,
+    )? builder,
     ErrorBuilder? onError,
     WidgetBuilder? onLoading,
     WidgetBuilder? orElse,
@@ -199,8 +196,7 @@ class AsyncValueBuilder extends StatelessWidget {
       C data3,
       D data4,
       E data5,
-    )
-        onData,
+    ) onData,
     Widget Function(
       BuildContext context,
       Widget child,
@@ -209,8 +205,7 @@ class AsyncValueBuilder extends StatelessWidget {
       C? data3,
       D? data4,
       E? data5,
-    )?
-        builder,
+    )? builder,
     ErrorBuilder? onError,
     WidgetBuilder? onLoading,
     WidgetBuilder? orElse,
@@ -262,8 +257,7 @@ class AsyncValueBuilder extends StatelessWidget {
       D data4,
       E data5,
       F data6,
-    )
-        onData,
+    ) onData,
     Widget Function(
       BuildContext context,
       Widget child,
@@ -273,8 +267,7 @@ class AsyncValueBuilder extends StatelessWidget {
       D? data4,
       E? data5,
       F? data6,
-    )?
-        builder,
+    )? builder,
     ErrorBuilder? onError,
     WidgetBuilder? onLoading,
     WidgetBuilder? orElse,
@@ -331,8 +324,7 @@ class AsyncValueBuilder extends StatelessWidget {
       E data5,
       F data6,
       G data7,
-    )
-        onData,
+    ) onData,
     Widget Function(
       BuildContext context,
       Widget child,
@@ -343,8 +335,7 @@ class AsyncValueBuilder extends StatelessWidget {
       E? data5,
       F? data6,
       G? data7,
-    )?
-        builder,
+    )? builder,
     ErrorBuilder? onError,
     WidgetBuilder? onLoading,
     WidgetBuilder? orElse,
@@ -406,8 +397,7 @@ class AsyncValueBuilder extends StatelessWidget {
       F data6,
       G data7,
       H data8,
-    )
-        onData,
+    ) onData,
     Widget Function(
       BuildContext context,
       Widget child,
@@ -419,8 +409,7 @@ class AsyncValueBuilder extends StatelessWidget {
       F? data6,
       G? data7,
       H? data8,
-    )?
-        builder,
+    )? builder,
     ErrorBuilder? onError,
     WidgetBuilder? onLoading,
     WidgetBuilder? orElse,
@@ -487,8 +476,7 @@ class AsyncValueBuilder extends StatelessWidget {
       G data7,
       H data8,
       I data9,
-    )
-        onData,
+    ) onData,
     Widget Function(
       BuildContext context,
       Widget child,
@@ -501,8 +489,7 @@ class AsyncValueBuilder extends StatelessWidget {
       G? data7,
       H? data8,
       I? data9,
-    )?
-        builder,
+    )? builder,
     ErrorBuilder? onError,
     WidgetBuilder? onLoading,
     WidgetBuilder? orElse,
@@ -573,7 +560,7 @@ class AsyncValueBuilder extends StatelessWidget {
                 padding: const EdgeInsets.all(32),
                 child: Text(
                   error.toString(),
-                  style: theme.primaryTextTheme.bodyText1,
+                  style: theme.primaryTextTheme.bodyLarge,
                   textAlign: TextAlign.center,
                 ),
               ),
